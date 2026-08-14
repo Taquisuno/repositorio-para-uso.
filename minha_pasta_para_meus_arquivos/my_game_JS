@@ -1,0 +1,67 @@
+let cash = 0;
+let multiplicador = 1;
+let Renaissance = 1;
+const pValor = document.querySelector("#cashP");
+const allP = document.querySelectorAll("p");
+const allBT = document.querySelectorAll("button");
+let valores = [20, 40, 1000000];
+const intervaloPtS;
+pValor.innerHTML = cash;
+function atualizarTela(){
+	pValor.textContent = Math.round(cash) + "pt";
+	allP[1].innerText = "1";
+	allBT[2].innerText = "mult_price: " + Math.round(valores[0]) + "pt";
+	allP[2].innerText = "2";
+	allBT[3].innerText = "ptPerSecond_price: " + Math.round(valores[1]) + "pt";
+	allP[3].innerText = "3";
+	allBT[4].innerText = "Renaissance: " + Math.round(valores[2]) + "pt";
+}  
+function cashUp(){
+	cash += (1 * multiplicador) * Renaissance;
+	pValor.textContent = Math.round(cash) + "pt";
+}
+function mostrarShop(){
+	if(allP[1].innerText != "" && allBT[2].innerText != ""){
+		do{
+		allP[1].innerText = "";
+		allBT[2].innerText = "";
+		allP[2].innerText = "";
+		allBT[3].innerText = "";
+		allP[3].innerText = "";
+		allBT[4].innerText = "";
+		}while(allP[1].innerText != "" && allBT[2].innerText != "");
+	}
+	else{
+		atualizarTela();
+	}
+}
+function comprarMult(){
+	if(cash >= Math.round(valores[0])){
+		cash -= valores[0];
+		valores[0] = (valores[0] + valores[0]) * 1.8;
+		multiplicador *= 2;
+		atualizarTela();
+	}
+}
+function ptPerSecond(){
+	if(cash >= Math.round(valores[1])){
+		cash -= valores[1];
+		valores[1] = (valores[1] + valores[1] - (valores[1] / 2)) * 1.8;
+		intervaloPtS = setInterval(() => {
+			cash += (1 * multiplicador) * Renaissance;
+			atualizarTela();
+		}, 1000);
+	}
+	else{}
+}
+function losingToWin(){
+	if(cash >= valores[2]){
+		cash = 0;
+		valores[0] = 20;
+		valores[1] = 40;
+		clearAllIntervals(intervaloPtS);
+		valores[2] = valores[2] * 4;
+		Renaissance *= 2;
+		atualizarTela();
+	}
+}

@@ -1,0 +1,27 @@
+<!doctype HTML>
+<html>
+	<head>
+		<title>click</title>
+		<link rel = "stylesheet" href = "my_game.css"/>
+		<meta charset = "UTF-8">
+	</head>
+	<body>
+	<main>
+	<p id = "cashP"></p>
+	<button onclick = "cashUp()" id = "btPtUp">click</button>
+	</main>
+	<section>
+	<button onclick = "mostrarShop()">shop</button>
+	<br>
+	<p></p>
+	<button id = "btMult" onclick = "comprarMult()"></button>
+	<br>
+	<p></p>
+	<button onclick = "ptPerSecond()"></button>
+	<br>
+	<p></p>
+	<button onclick = "losingToWin()"></button>
+	</section>
+	<script src = "my_game.js"></script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+body{
+	color: white;
+	background-color: black;
+}
+main{
+	width: 50%;
+	display: inline-block;
+}
+section{
+	width: 50%;
+	display: inline-block;
+	position: absolute;
+	top: 22.5px;
+}
+button{
+	color: #AAAAFF;
+	background-color: black;
+	border: solid transparent 2px;
+}
+#btMult{
+	display: inline-block;
+	width: 25%;
+	position: absolute;
+}
+p{
+	display: inline-block;
+}
+#btPtUp{
+	display: inline-block;
+}

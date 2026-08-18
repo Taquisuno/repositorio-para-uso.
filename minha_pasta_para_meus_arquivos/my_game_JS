@@ -48,13 +48,15 @@ function comprarMult(){
 		valores[0] = (valores[0] + valores[0]) * 1.8;
 		multiplicador *= 2;
 		atualizarTela();
+		atualizarShop();
 	}
 }
 function ptPerSecond(){
 	if(cash >= Math.round(valores[1])){
 		cash -= valores[1];
 		valores[1] = (valores[1] + valores[1] - (valores[1] / 2)) * 1.8;
-		
+		ptPerS++;
+		atualizarShop();
 	}
 	else{}
 }
@@ -67,5 +69,6 @@ function losingToWin(){
 		valores[2] = valores[2] * 4;
 		Renaissance *= 2;
 		atualizarTela();
+		atualizarShop();
 	}
 }

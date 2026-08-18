@@ -5,9 +5,13 @@ const pValor = document.querySelector("#cashP");
 const allP = document.querySelectorAll("p");
 const allBT = document.querySelectorAll("button");
 let valores = [20, 40, 1000000];
-const intervaloPtS;
+let ptPerS = 0;
+setInterval(() => {
+	cash += (ptPerS * multiplicador) * Renaissance;
+	atualizarTela();
+}, 1000);
 pValor.innerHTML = cash;
-function atualizarTela(){
+function atualizarShop(){
 	pValor.textContent = Math.round(cash) + "pt";
 	allP[1].innerText = "1";
 	allBT[2].innerText = "mult_price: " + Math.round(valores[0]) + "pt";
@@ -15,7 +19,10 @@ function atualizarTela(){
 	allBT[3].innerText = "ptPerSecond_price: " + Math.round(valores[1]) + "pt";
 	allP[3].innerText = "3";
 	allBT[4].innerText = "Renaissance: " + Math.round(valores[2]) + "pt";
-}  
+}
+function atualizarTela(){
+	pValor.textContent = Math.round(cash) + "pt";
+}
 function cashUp(){
 	cash += (1 * multiplicador) * Renaissance;
 	pValor.textContent = Math.round(cash) + "pt";
@@ -32,7 +39,7 @@ function mostrarShop(){
 		}while(allP[1].innerText != "" && allBT[2].innerText != "");
 	}
 	else{
-		atualizarTela();
+		atualizarShop();
 	}
 }
 function comprarMult(){
@@ -47,10 +54,7 @@ function ptPerSecond(){
 	if(cash >= Math.round(valores[1])){
 		cash -= valores[1];
 		valores[1] = (valores[1] + valores[1] - (valores[1] / 2)) * 1.8;
-		intervaloPtS = setInterval(() => {
-			cash += (1 * multiplicador) * Renaissance;
-			atualizarTela();
-		}, 1000);
+		
 	}
 	else{}
 }
@@ -59,7 +63,7 @@ function losingToWin(){
 		cash = 0;
 		valores[0] = 20;
 		valores[1] = 40;
-		clearAllIntervals(intervaloPtS);
+		ptPerS = 0;
 		valores[2] = valores[2] * 4;
 		Renaissance *= 2;
 		atualizarTela();

@@ -20,7 +20,7 @@ function atualizarShop(){
 	allP[3].innerText = "3";
 	allBT[4].innerText = "Renaissance: " + Math.round(valores[2]) + "pt";
 	allP[4].innerHTML = "4";
-	allBT[5].innerHTML = "click power_price: " + Math.round(valores[3]) + "pt"
+	allBT[5].innerHTML = "click power_price: " + Math.round(valores[3]) + "pt";
 }
 function atualizarTela(){
 	pValor.textContent = Math.round(cash) + "pt";
@@ -37,6 +37,8 @@ function mostrarShop(){
 		allBT[3].innerText = "";
 		allP[3].innerText = "";
 		allBT[4].innerText = "";
+		allP[4].innerHTML = "";
+	allBT[5].innerHTML = "";
 	}
 	else{
 		atualizarShop();

@@ -17,5 +17,6 @@ async function tocar(){
 	oscilador.type = "sawtooth";
 	await delayHelp(2000);
 	oscilador.type = "triangle";
+	await delayHelp(2000);
 	oscilador.stop();
 }

@@ -65,7 +65,10 @@ function losingToWin(){
 		cash = 0;
 		valores[0] = 20;
 		valores[1] = 40;
+		valores[3] = 100;
 		ptPerS = 0;
+		multiplicador = 1;
+		valorClick = 1;
 		valores[2] = valores[2] * 4;
 		Renaissance *= 2;
 		atualizarTela();

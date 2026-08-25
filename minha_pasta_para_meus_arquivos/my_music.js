@@ -1,11 +1,3 @@
-const audio = new AudioContext();
-let repeticoes = [0, 0, 0, 0];
-
-function delayHelp( ms){
-	return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function tocar(){
 let audio = new AudioContext();
 let repeticoes = [0, 0, 0, 0];
 
@@ -21,5 +13,4 @@ async function tocar(){
 	oscilador[0].start();
 	await delayHelp(50);
 	oscilador[0].stop();
-}
 }

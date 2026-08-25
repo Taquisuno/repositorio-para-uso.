@@ -21,6 +21,9 @@
 	<br>
 	<p></p>
 	<button onclick = "losingToWin()"></button>
+	<br>
+	<p></p>
+	<button onclick = "valorDeClick()"></button>
 	</section>
 	<script src = "my_game.js"></script>
 	</body>

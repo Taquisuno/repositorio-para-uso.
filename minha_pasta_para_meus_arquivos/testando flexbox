@@ -35,13 +35,10 @@
 		<script>
 			const teste_direto = document.querySelector("#teste_direto");
 			const allItens = document.querySelectorAll(".item");
-			let i = 0;
 			function dobrarCaracteres(){
-				allItens[0].innerHTML += " " + allItens[0].innerHTML;
-				allItens[1].innerHTML += " " + allItens[1].innerHTML;
-				allItens[2].innerHTML += " " + allItens[2].innerHTML;
-				allItens[3].innerHTML += " " + allItens[3].innerHTML;
-				allItens[4].innerHTML += " " + allItens[4].innerHTML;
+				for(let i = 0; i < allItens.length; i++){
+					allItens[i].innerHTML += " " + allItens[i].innerHTML;
+				}
 			}
 			function mudarDisplay(){
 				switch(i){
@@ -67,11 +64,9 @@
 				}
 			}
 			function clearButton(){
-				allItens[0].innerHTML = "1";
-				allItens[1].innerHTML = "2";
-				allItens[2].innerHTML = "3";
-				allItens[3].innerHTML = "4";
-				allItens[4].innerHTML = "5";
+				for(let i = 0; i < allItens.length; i++){
+					allItens[i].innerHTML = i;
+				}
 			}
 		</script>
 	</body>

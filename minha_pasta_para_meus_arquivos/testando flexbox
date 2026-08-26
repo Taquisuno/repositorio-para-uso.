@@ -37,10 +37,9 @@
 			const allItens = document.querySelectorAll(".item");
 			let i = 0;
 			function dobrarCaracteres(){
-				for(i = 0; i < allItens.length; i++){
-					allItens[i].innerHTML += " " + allItens[i].innerHTML;
+				for(let i = 0; i < allItens.length; i++){
+					allItens[i].textContent += " " + allItens[i].textContent;
 				}
-				i = 0;
 			}
 			function mudarDisplay(){
 				switch(i){
@@ -63,10 +62,9 @@
 				}
 			}
 			function clearButton(){
-				for(i = 0; i < allItens.length; i++){
-					allItens[i].innerHTML = i + 1;
+				for(let i = 0; i < allItens.length; i++){
+					allItens[i].textContent = i + 1;
 				}
-				i = 0;
 			}
 		</script>
 	</body>

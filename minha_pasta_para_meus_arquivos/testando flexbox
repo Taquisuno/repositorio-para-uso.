@@ -31,7 +31,7 @@
 		</div>
 		<button onclick = "dobrarCaracteres()">click</button>
 		<button onclick = "mudarDisplay()">click</button>
-		<button onclick = "clear()">clear</button>
+		<button onclick = "clearButton()">clear</button>
 		<script>
 			const teste_direto = document.querySelector("#teste_direto");
 			const allItens = document.querySelectorAll(".item");
@@ -66,7 +66,7 @@
 					break;
 				}
 			}
-			function clear(){
+			function clearButton(){
 				allItens[0].innerHTML = "1";
 				allItens[1].innerHTML = "2";
 				allItens[2].innerHTML = "3";

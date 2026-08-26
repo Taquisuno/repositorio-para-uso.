@@ -35,38 +35,38 @@
 		<script>
 			const teste_direto = document.querySelector("#teste_direto");
 			const allItens = document.querySelectorAll(".item");
+			let i = 0;
 			function dobrarCaracteres(){
-				for(let i = 0; i < allItens.length; i++){
+				for(i = 0; i < allItens.length; i++){
 					allItens[i].innerHTML += " " + allItens[i].innerHTML;
 				}
+				i = 0;
 			}
 			function mudarDisplay(){
 				switch(i){
 					case 0:
-						teste_direto.style.display = "row";
-						i++
+						teste_direto.style.flexDirection = "row";
 					break;
 					case 1:
-						teste_direto.style.display = "row-reverse";
-						i++
+						teste_direto.style.flexDirection = "row-reverse";
 					break;
 					case 2:
-						teste_direto.style.display = "column";
-						i++
+						teste_direto.style.flexDirection = "column";
 					break;
 					case 3:
-						teste_direto.style.display = "column-reverse";
-						i++
+						teste_direto.style.flexDirection = "column-reverse";
 					break;
-					default:
-						i = 0;
-					break;
+				}
+				i++;
+				if(i > 3){
+					i = 0;
 				}
 			}
 			function clearButton(){
-				for(let i = 0; i < allItens.length; i++){
-					allItens[i].innerHTML = i;
+				for(i = 0; i < allItens.length; i++){
+					allItens[i].innerHTML = i + 1;
 				}
+				i = 0;
 			}
 		</script>
 	</body>

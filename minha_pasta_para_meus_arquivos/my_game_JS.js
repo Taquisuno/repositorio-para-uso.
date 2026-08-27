@@ -1,32 +1,48 @@
-let cash = 0;
-let multiplicador = 1;
-let Renaissance = 1;
-let valorClick = 1;
+let upgrades = {
+	cash: 0,
+	multiplicador: {
+		preco: 20,
+		nivel: 1,
+		power: 1
+	},
+	ptPerS: {
+		preco: 40,
+		ptS: 0
+	},
+	clickPower: {
+		power: 1,
+		preco: 100,
+		nivel: 1
+	},
+	Renaissance: {
+		preco: 1000000,
+		power: 1,
+		nivel: 1
+	}
+};
 const pValor = document.querySelector("#cashP");
 const allP = document.querySelectorAll("p");
 const allBT = document.querySelectorAll("button");
-let valores = [20, 40, 1000000, 100];
-let ptPerS = 0;
 setInterval(() => {
-	cash += (ptPerS * multiplicador) * Renaissance;
+	upgrades.cash += (upgrades.ptPerS.ptS * upgrades.multiplicador.power) * upgrades.Renaissance.power;
 	atualizarTela();
 }, 1000);
-pValor.innerHTML = cash + "pt";
+pValor.innerHTML = upgrades.cash + "pt";
 function atualizarShop(){
 	allP[1].innerText = "1";
-	allBT[2].innerText = "mult_price: " + Math.round(valores[0]) + "pt";
+	allBT[2].innerText = "mult_price: " + Math.round(upgrades.multiplicador.preco) + "pt";
 	allP[2].innerText = "2";
-	allBT[3].innerText = "ptPerSecond_price: " + Math.round(valores[1]) + "pt";
+	allBT[3].innerText = "ptPerSecond_price: " + Math.round(upgrades.ptPerS.preco) + "pt";
 	allP[3].innerText = "3";
-	allBT[4].innerText = "Renaissance: " + Math.round(valores[2]) + "pt";
+	allBT[4].innerText = "Renaissance: " + Math.round(upgrades.Renaissance.preco) + "pt";
 	allP[4].innerHTML = "4";
-	allBT[5].innerHTML = "click power_price: " + Math.round(valores[3]) + "pt";
+	allBT[5].innerHTML = "click power_price: " + Math.round(upgrades.clickPower.preco) + "pt";
 }
 function atualizarTela(){
-	pValor.textContent = Math.round(cash) + "pt";
+	pValor.textContent = Math.round(upgrades.cash) + "pt";
 }
 function cashUp(){
-	cash += (valorClick * multiplicador) * Renaissance;
+	cash += (valorClick * upgrades.multiplicador.porwer) * upgrades.Renaissance.power;
 	pValor.textContent = Math.round(cash) + "pt";
 }
 function mostrarShop(){
@@ -54,8 +70,8 @@ function comprarMult(){
 	}
 }
 function ptPerSecond(){
-	if(cash >= valores[1]){
-		cash -= valores[1];
+	if(upgrades.cash >= valores[1]){
+		upgrades.cash -= valores[1];
 		valores[1] = (valores[1] + valores[1] - (valores[1] / 2)) * 1.8;
 		ptPerS++;
 		atualizarShop();
@@ -63,8 +79,8 @@ function ptPerSecond(){
 	else{}
 }
 function losingToWin(){
-	if(cash >= valores[2]){
-		cash = 0;
+	if(upgrades.cash >= valores[2]){
+		upgrades.cash = 0;
 		valores[0] = 20;
 		valores[1] = 40;
 		valores[3] = 100;
@@ -78,8 +94,8 @@ function losingToWin(){
 	}
 }
 function valorDeClick(){
-	if(cash >= valores[3]){
-		cash -= valores[3];
+	if(upgrades.cash >= valores[3]){
+		upgrades.cash -= valores[3];
 		valores[3] = (valores[3] + valores[3] - (valores[3] / 2)) * 1.8;
 		valorClick *= 2;
 		atualizarShop();

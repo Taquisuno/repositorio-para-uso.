@@ -42,8 +42,8 @@ function atualizarTela(){
 	pValor.textContent = Math.round(upgrades.cash) + "pt";
 }
 function cashUp(){
-	cash += (valorClick * upgrades.multiplicador.porwer) * upgrades.Renaissance.power;
-	pValor.textContent = Math.round(cash) + "pt";
+	upgrades.cash += (upgrades.clickPower.power * upgrades.multiplicador.porwer) * upgrades.Renaissance.power;
+	pValor.textContent = Math.round(upgrades.cash) + "pt";
 }
 function mostrarShop(){
 	if(allP[1].innerText != "" && allBT[2].innerText != ""){
@@ -61,43 +61,43 @@ function mostrarShop(){
 	}
 }
 function comprarMult(){
-	if(cash >= valores[0]){
-		cash -= valores[0];
-		valores[0] = (valores[0] + valores[0]) * 1.8;
-		multiplicador *= 2;
+	if(upgrades.cash >= upgrades.multiplicador.preco){
+		upgrades.cash -= upgrades.multiplicador.preco;
+		upgrades.multiplicador.preco = (upgrades.multiplicador.preco + upgrades.multiplicador.preco) * 1.8;
+		upgrades.multiplicador.power *= 2;
 		atualizarTela();
 		atualizarShop();
 	}
 }
 function ptPerSecond(){
-	if(upgrades.cash >= valores[1]){
-		upgrades.cash -= valores[1];
-		valores[1] = (valores[1] + valores[1] - (valores[1] / 2)) * 1.8;
-		ptPerS++;
+	if(upgrades.cash >= upgrades.ptPerS.preco){
+		upgrades.cash -= upgrades.ptPerS.preco;
+		upgrades.ptPerS.preco = (upgrades.ptPerS.preco + upgrades.ptPerS.preco - (upgrades.ptPerS.preco / 2)) * 1.8;
+		upgrades.ptPerS.ptS++;
 		atualizarShop();
 	}
 	else{}
 }
 function losingToWin(){
-	if(upgrades.cash >= valores[2]){
+	if(upgrades.cash >= upgrades.Renaissance.preco){
 		upgrades.cash = 0;
-		valores[0] = 20;
-		valores[1] = 40;
-		valores[3] = 100;
-		ptPerS = 0;
-		multiplicador = 1;
-		valorClick = 1;
-		valores[2] = valores[2] * 4;
-		Renaissance *= 2;
+		upgrades.multiplicador.preco = 20;
+		upgrades.ptPerS.preco = 40;
+		upgrades.clickPower.preco = 100;
+		upgrades.ptPerS.ptS = 0;
+		upgrades.multiplicador.power = 1;
+		upgrades.clickPower.power = 1;
+		upgrades.Renaissance.preco = upgrades.Renaissance.preco * 4;
+		upgrades.Renaissance.power *= 2;
 		atualizarTela();
 		atualizarShop();
 	}
 }
 function valorDeClick(){
-	if(upgrades.cash >= valores[3]){
-		upgrades.cash -= valores[3];
-		valores[3] = (valores[3] + valores[3] - (valores[3] / 2)) * 1.8;
-		valorClick *= 2;
+	if(upgrades.cash >= upgrades.clickPower.preco){
+		upgrades.cash -= upgrades.clickPower.preco;
+		upgrades.clickPower.preco = (upgrades.clickPower.preco + upgrades.clickPower.preco - (upgrades.clickPower.preco / 2)) * 1.8;
+		upgrades.clickPower.power *= 2;
 		atualizarShop();
 	}
 }

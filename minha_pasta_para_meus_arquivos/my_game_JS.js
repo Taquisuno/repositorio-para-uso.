@@ -42,7 +42,7 @@ function atualizarTela(){
 	pValor.textContent = Math.round(upgrades.cash) + "pt";
 }
 function cashUp(){
-	upgrades.cash += (upgrades.clickPower.power * upgrades.multiplicador.porwer) * upgrades.Renaissance.power;
+	upgrades.cash += (upgrades.clickPower.power * upgrades.multiplicador.power) * upgrades.Renaissance.power;
 	pValor.textContent = Math.round(upgrades.cash) + "pt";
 }
 function mostrarShop(){

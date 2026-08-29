@@ -75,6 +75,7 @@ function ptPerSecond(){
 		upgrades.ptPerS.preco = (upgrades.ptPerS.preco + upgrades.ptPerS.preco - (upgrades.ptPerS.preco / 2)) * 1.8;
 		upgrades.ptPerS.ptS++;
 		atualizarShop();
+		atualizarTela();
 	}
 	else{}
 }

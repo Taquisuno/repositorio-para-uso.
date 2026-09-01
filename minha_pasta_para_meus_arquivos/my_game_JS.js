@@ -18,6 +18,16 @@ let upgrades = {
 		preco: 1000000,
 		power: 1,
 		nivel: 1
+	},
+	critico: {
+		chance: {
+			porcentagem: 0,
+			preco: 250
+		},
+		mult: {
+			preco: 200,
+			power: 2
+		}
 	}
 };
 const pValor = document.querySelector("#cashP");

@@ -65,6 +65,7 @@ function comprarMult(){
 		upgrades.cash -= upgrades.multiplicador.preco;
 		upgrades.multiplicador.preco = (upgrades.multiplicador.preco + upgrades.multiplicador.preco) * 1.8;
 		upgrades.multiplicador.power *= 2;
+		upgrades.multiplicador.nivel++;
 		atualizarTela();
 		atualizarShop();
 	}
@@ -90,6 +91,7 @@ function losingToWin(){
 		upgrades.clickPower.power = 1;
 		upgrades.Renaissance.preco = upgrades.Renaissance.preco * 4;
 		upgrades.Renaissance.power *= 2;
+		upgrades.Renaissance.nivel++;
 		atualizarTela();
 		atualizarShop();
 	}
@@ -99,6 +101,8 @@ function valorDeClick(){
 		upgrades.cash -= upgrades.clickPower.preco;
 		upgrades.clickPower.preco = (upgrades.clickPower.preco + upgrades.clickPower.preco - (upgrades.clickPower.preco / 2)) * 1.8;
 		upgrades.clickPower.power *= 2;
+		upgrades.clickPower.nivel++;
 		atualizarShop();
+		atualizarTela();
 	}
 }

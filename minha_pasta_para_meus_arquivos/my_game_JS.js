@@ -22,11 +22,13 @@ let upgrades = {
 	critico: {
 		chance: {
 			porcentagem: 0.01,
-			preco: 250
+			preco: 250,
+			nivel: 1
 		},
 		mult: {
 			preco: 200,
-			power: 2
+			power: 2,
+			nivel: 1
 		}
 	}
 };

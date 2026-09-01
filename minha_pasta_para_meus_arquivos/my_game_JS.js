@@ -78,7 +78,6 @@ function ptPerSecond(){
 		atualizarShop();
 		atualizarTela();
 	}
-	else{}
 }
 function losingToWin(){
 	if(upgrades.cash >= upgrades.Renaissance.preco){

@@ -21,7 +21,7 @@ let upgrades = {
 	},
 	critico: {
 		chance: {
-			porcentagem: 0,01,
+			porcentagem: 0.01,
 			preco: 250
 		},
 		mult: {

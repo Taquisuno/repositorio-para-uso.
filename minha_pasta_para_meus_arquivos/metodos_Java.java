@@ -2,38 +2,27 @@ import java.util.Scanner;
 public class Main{
 	static Scanner input = new Scanner(System.in); 
 	public static void main(String[] args){
-	    String cumprimento = imprimirNome(input.nextLine());
-	    System.out.println(cumprimento + "\n");
-		double x = soma();
-		System.out.println(x + "\n");
-		double y = multiplicacao();
-		System.out.println(y + "\n");
-		boolean idadeV = verificacao(input.nextInt());
-		System.out.println(idadeV);
+		int x = input.nextInt();
+		int y = input.nextInt();
+		int z = soma(x, y);
+		System.out.println(z);
+	    double a = input.nextDouble();
+		double b = input.nextDouble();
+		double c = soma(a, b);
+		System.out.println(c);
+		int d = input.nextInt();
+		int e = input.nextInt();
+		int f = input.nextInt();
+		int n = soma(d, e, f);
+		System.out.println(n);
 	}
-	static double a;
-	static double b;
-    public static double soma(){
-       a = input.nextDouble();
-       input.nextLine();
-       b = input.nextDouble();
-       input.nextLine();
-       return a + b;
+	public static int soma(int x, int y){
+       return x + y;
     }
-    public static double multiplicacao(){
-       a = input.nextDouble();
-       input.nextLine();
-       b = input.nextDouble();
-       input.nextLine();
-       return a * b;
+    public static double soma(double x, double y){
+       return x + y;
     }
-    public static String imprimirNome(String nome){
-        return "olá " + nome;
-    }
-    public static boolean verificacao(int idade){
-        if(idade >= 18){
-            return true;
-        }
-        return false;
+	public static int soma(int x, int y, int c){
+       return x + y + c;
     }
 }

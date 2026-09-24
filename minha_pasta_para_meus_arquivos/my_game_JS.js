@@ -21,7 +21,7 @@ let upgrades = {
 	},
 	critico: {
 		chance: {
-			porcentagem: 0.01,
+			porcentagem: Math.round(Math.random() * 100),
 			preco: 250,
 			nivel: 1
 		},
@@ -54,8 +54,14 @@ function atualizarTela(){
 	pValor.textContent = Math.round(upgrades.cash) + "pt";
 }
 function cashUp(){
-	upgrades.cash += (upgrades.clickPower.power * upgrades.multiplicador.power) * upgrades.Renaissance.power;
-	pValor.textContent = Math.round(upgrades.cash) + "pt";
+	if(upgrades.critico.chance.porcentagem < 100){
+		upgrades.cash += (upgrades.clickPower.power * upgrades.multiplicador.power) * upgrades.Renaissance.power;
+		pValor.textContent = Math.round(upgrades.cash) + "pt";
+	}
+	else{
+		upgrades.cash += upgrades.critico.mult.power * (upgrades.clickPower.power * upgrade.multiplicador.power) * upgrades.Renaissance.power;
+		pValor.textContent = Math.round(upgrades.cash) + "pt";
+	}
 }
 function mostrarShop(){
 	if(allP[1].innerText != "" && allBT[2].innerText != ""){

@@ -1,0 +1,26 @@
+.conteiner {
+	
+	width: 100%;
+}
+body {
+	align-content: center;
+	background-color: rgb(125, 0, 200);
+}
+button {
+	border: solid 4px transparent;
+	background-color: black;
+	color: rgb(125, 0, 255);
+}
+input {
+	border: solid 4px transparent;
+	background-color: transparent;
+	color: transparent;
+}
+#inputBT {
+	background-color: transparent;
+	color: transparent;
+}
+#avancarBT {
+	background-color: transparent;
+	color: transparent;
+}

@@ -79,6 +79,7 @@ async function avancar(){
 			allItem[4].textContent = "B) 27.57m/s";
 			allItem[5].textContent = "C) 10m/s";
 			allItem[6].textContent = "D) 35m/s";
+			allItem[7].value = "";
 			allItem[8].onclick = questao2;
 			break;
 			case 2:
@@ -88,6 +89,7 @@ async function avancar(){
 			allItem[4].textContent = "B) é um ponto no espaço onde as leis da fisica não funcionam de forma normal, devido a extrema distorção do tecido do espaço tempo, que ocerre por causa da gravidade extrema.";
 			allItem[5].textContent = "C) é o centro de um buraco branco.";
 			allItem[6].textContent = "D) é o nosso universo.";
+			allItem[7].value = "";
 			allItem[8].onclick = questao3;
 			break;
 		}

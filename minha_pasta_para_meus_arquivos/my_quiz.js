@@ -29,21 +29,25 @@ async function questao1(){
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
 		allItem[9].style.color = "#00FF00";
 		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
 		break;
 		case "a)":
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
 		allItem[9].style.color = "#00FF00";
 		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
 		break;
 		case "A":
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
 		allItem[9].style.color = "#00FF00";
 		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
 		break;
 		case "A)":
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
 		allItem[9].style.color = "#00FF00";
 		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
 		break;
 		default:
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
@@ -68,7 +72,27 @@ async function avancar(){
 		allItem[11].style.backgroundColor = "transparent";
 		allItem[11].textContent = "";
 	if(contadorDeQues === 20){
-		
+		if(contadorDeQues === 5){
+		for(let i = 3; i < allItem.length; i++){
+			if(i > 6){
+			allItem[i].textContent = "";
+			allItem[i].style.backgroundColor = "transparent";
+			allItem[i].style.color = "transparent";
+			}
+			else{
+				allItem[i].textContent = "";
+			}
+		}
+		allItem[0].textContent = "FIM";
+		allItem[1].textContent = "você acertou:" + acertos + "/" + contadorDeQues;
+		allItem[2].textContent = "tentar novmente";
+		allItem[2].style.color = "rgb(125, 0, 255)";
+		allItem[2].style.backgroundColor = "black";
+		allItem[7].value = "";
+		allItem[7].placeholder = "";
+		contadorDeQues = 0;
+		acertos = 0;
+	}
 	}
 	else{
 		switch(contadorDeQues){
@@ -92,6 +116,26 @@ async function avancar(){
 			allItem[7].value = "";
 			allItem[8].onclick = questao3;
 			break;
+			case 3:
+			allItem[0].textContent = "QUESTÃO 4";
+			allItem[1].textContent = "Qual é primeira lei de ohm?";
+			allItem[3].textContent = "A) V = D/T";
+			allItem[4].textContent = "B) S = S0 + V0 . t + a.t²/2";
+			allItem[5].textContent = "C) V² = V0² +  2.a.D(delta)S";
+			allItem[6].textContent = "D) U = R.I";
+			allItem[7].value = "";
+			allItem[8].onclick = questao4;
+			break;
+			case 4:
+			allItem[0].textContent = "QUESTÃO 5";
+			allItem[1].textContent = "Qual é primeira lei de Newton?";
+			allItem[3].textContent = "A) lei da ação e reação.";
+			allItem[4].textContent = "B) lei da inércia.";
+			allItem[5].textContent = "C) lei da termodinamica.";
+			allItem[6].textContent = "D) lei do princípio da dinâmica.";
+			allItem[7].value = "";
+			allItem[8].onclick = questao5;
+			break;
 		}
 	}
 }
@@ -102,21 +146,25 @@ async function questao2(){
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
 		allItem[9].style.color = "#00FF00";
 		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
 		break;
 		case "c)":
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
 		allItem[9].style.color = "#00FF00";
 		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
 		break;
 		case "C":
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
 		allItem[9].style.color = "#00FF00";
 		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
 		break;
 		case "C)":
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
 		allItem[9].style.color = "#00FF00";
 		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
 		break;
 		default:
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
@@ -138,21 +186,105 @@ async function questao3(){
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
 		allItem[9].style.color = "#00FF00";
 		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
 		break;
 		case "b)":
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
 		allItem[9].style.color = "#00FF00";
 		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
 		break;
 		case "B":
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
 		allItem[9].style.color = "#00FF00";
 		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
 		break;
 		case "B)":
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
 		allItem[9].style.color = "#00FF00";
 		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
+		break;
+		default:
+		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
+		allItem[9].style.color = "#FF0000";
+		allItem[9].textContent = "RESPOSTA INCORRETA";
+		allItem[10].style.color = "#FFFFFF";
+		allItem[10].textContent = "a resposta correta é: B)";
+		break;
+	}
+	allItem[11].style.color = "rgb(125, 0, 255)";
+	allItem[11].style.backgroundColor = "#000000";
+	allItem[11].textContent = "avançar";
+	contadorDeQues++;
+}
+async function questao4(){
+	let inputBT = document.querySelector("input").value;
+	switch(inputBT){
+		case "d":
+		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
+		allItem[9].style.color = "#00FF00";
+		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
+		break;
+		case "d)":
+		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
+		allItem[9].style.color = "#00FF00";
+		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
+		break;
+		case "D":
+		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
+		allItem[9].style.color = "#00FF00";
+		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
+		break;
+		case "D)":
+		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
+		allItem[9].style.color = "#00FF00";
+		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
+		break;
+		default:
+		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
+		allItem[9].style.color = "#FF0000";
+		allItem[9].textContent = "RESPOSTA INCORRETA";
+		allItem[10].style.color = "#FFFFFF";
+		allItem[10].textContent = "a resposta correta é: D)";
+		break;
+	}
+	allItem[11].style.color = "rgb(125, 0, 255)";
+	allItem[11].style.backgroundColor = "#000000";
+	allItem[11].textContent = "avançar";
+	contadorDeQues++;
+}
+async function questao5(){
+	let inputBT = document.querySelector("input").value;
+	switch(inputBT){
+		case "b":
+		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
+		allItem[9].style.color = "#00FF00";
+		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
+		break;
+		case "b)":
+		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
+		allItem[9].style.color = "#00FF00";
+		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
+		break;
+		case "B":
+		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
+		allItem[9].style.color = "#00FF00";
+		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
+		break;
+		case "B)":
+		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";
+		allItem[9].style.color = "#00FF00";
+		allItem[9].textContent = "RESPOSTA CORRETA";
+		acertos++;
 		break;
 		default:
 		allItem[9].style.backgroundColor = "rgb(0, 0, 0)";

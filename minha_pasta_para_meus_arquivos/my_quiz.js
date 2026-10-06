@@ -90,6 +90,7 @@ async function avancar(){
 		allItem[2].style.backgroundColor = "black";
 		allItem[7].value = "";
 		allItem[7].placeholder = "";
+		allItem[8].onclick = questao1;
 		contadorDeQues = 0;
 		acertos = 0;
 	}

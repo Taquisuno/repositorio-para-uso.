@@ -15,6 +15,7 @@
 		</main>
 		<script>
 			let pontos = 0;
+			let pontosPorClick = 1;
 			const elementoPontos = document.querySelector("#pontos");
 			const elementoBotao = document.querySelector("#clickUP");
 			function atualizarInterface(){
@@ -22,7 +23,7 @@
 			}
 			
 			function aumentarPontos(){
-				pontos++;
+				pontos += pontosPorClick;
 				atualizarInterface();
 			}
 			

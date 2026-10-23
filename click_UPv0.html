@@ -17,10 +17,13 @@
 			let pontos = 0;
 			const elementoPontos = document.querySelector("#pontos");
 			const elementoBotao = document.querySelector("#clickUP");
+			function atualizarInterface(){
+				elementoPontos.texteContent = pontos;
+			}
 			
 			function aumentarPontos(){
 				pontos++;
-				elementoPontos.textContent = pontos;
+				atualizarInterface();
 			}
 			
 			elementoBotao.addEventListener("click", aumentarPontos);

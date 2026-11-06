@@ -17,10 +17,13 @@
 		<script>
 			let pontos = 0;
 			let pontosPorClick = 1;
+			let precoMelhoria1 = 10;
 			const elementoPontos = document.querySelector("#pontos");
 			const elementoBotao = document.querySelector("#clickUP");
+			const elementoComprarMelhoria = document.querySelector("#comprarMelhoria");
 			function atualizarInterface(){
 				elementoPontos.textContent = pontos;
+				elementoComprarMelhoria.textContent += " preço:" + precoMelhoria1;
 			}
 			
 			function aumentarPontos(){

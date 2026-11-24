@@ -1,20 +1,4 @@
-<!doctype HTML>
-<html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>click UP</title>
-	</head>
-	<body>
-		<header>
-			<h1>click UP</h1>
-		</header>
-		<main>
-			<p id = "pontos">0</p>
-			<button id = "clickUP">click</button>
-			<button id = "comprarMelhoria"></button>
-		</main>
-		<script>
+
 			let pontos = 0;
 			let pontosPorClick = 1;
 			let precoMelhoria1 = 10;
@@ -37,12 +21,10 @@
 					atualizarInterface();
 				}
 				else{
-					cosonle.log("pontos insuficientes!");
+					console.log("pontos insuficientes!");
 				}
 			}
 			atualizarInterface();
 			elementoBotao.addEventListener("click", aumentarPontos);
 			elementoComprarMelhoria.addEventListener("click", comprarMelhoria);
-		</script>
-	</body>
-</html>
+		

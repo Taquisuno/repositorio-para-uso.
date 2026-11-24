@@ -12,7 +12,7 @@
 		<main>
 			<p id = "pontos">0</p>
 			<button id = "clickUP">click</button>
-			<button id = "comprarMelhoria">comprar melhoria</button>
+			<button id = "comprarMelhoria"></button>
 		</main>
 		<script>
 			let pontos = 0;
@@ -23,15 +23,26 @@
 			const elementoComprarMelhoria = document.querySelector("#comprarMelhoria");
 			function atualizarInterface(){
 				elementoPontos.textContent = pontos;
-				elementoComprarMelhoria.textContent += " preço:" + precoMelhoria1;
+				elementoComprarMelhoria.textContent = "Comprar melhoria | preço:" + precoMelhoria1;
 			}
 			
 			function aumentarPontos(){
 				pontos += pontosPorClick;
 				atualizarInterface();
 			}
-			
+			function comprarMelhoria(){
+				if(pontos >= precoMelhoria1){
+					pontos -= precoMelhoria1;
+					pontosPorClick++;
+					atualizarInterface();
+				}
+				else{
+					cosole.log("pontos insuficientes!");
+				}
+			}
+			atualizarInterface();
 			elementoBotao.addEventListener("click", aumentarPontos);
+			elementoComprarMelhoria.addEventListener("click", comprarMelhoria);
 		</script>
 	</body>
 </html>
